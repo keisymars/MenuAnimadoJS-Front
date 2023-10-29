@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="PT-BR>">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE-edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Menu animado js</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+    <header>
+
+        <a href="#" class="logo">Logo</a>
+         <nav>
+    <div id="indicator"></div>
+    <a href="#">inicio</a>
+    <a href="#">sobre</a>
+    <a href="#">portifólio</a>
+    <a href="#">time</a>
+    <a href="#">contato</a>
+         </nav>
+
+    </header>
+
+    <script>
+        let indicator = document.querySelector('#indicator');
+        let items = document.querySelectorAll('nav a');
+        
+        function marker(e){
+            indicator.style.left = e.offsetLeft+"px";
+            indicator.style.width = e.offsetWidth+"px";
+        }
+
+        items.forEach(link => {
+            link.addEventListener('click',(e)=> {
+                marker(e.target);
+            })
+        })
+    </script>
+</body>
+</html>
